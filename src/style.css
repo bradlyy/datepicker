@@ -1,0 +1,17 @@
+body{
+  font-family: "monaco", serif;
+}
+h1{
+  color: blue;
+  font-size: 16px;
+}
+@font-face{
+  font-family: "SC";
+  src: url("../Sofachrome.ttf")
+}
+.foot{
+  font-family: SC;
+}
+.foot p:hover+span{
+  display: none;
+}

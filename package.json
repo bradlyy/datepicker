@@ -1,0 +1,13 @@
+{
+  "name": "practice",
+  "version": "1.0.0",
+  "description": "html&css practice",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "browser-sync start --server --files \"src/style.css, index.html\""
+  },
+  "dependencies": {
+    "browser-sync": "^2.23.7"
+  }
+}
