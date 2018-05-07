@@ -5,7 +5,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "browser-sync start --server --files \"src/style.css, index.html\""
+    "start": "browser-sync start --server --files \"src/*, index.html\""
   },
   "dependencies": {
     "browser-sync": "^2.23.7"
