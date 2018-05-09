@@ -10,10 +10,16 @@
         // month参数为实际月份-1
         var dayData = {};
         const i = new Date(year, month, date);
-        dayData.year = i.getFullYear();
-        dayData.month = i.getMonth() + 1;
-        dayData.date= i.getDate();
-        dayData.weekday = i.getDay() ? i.getDay() : 7;
+        var year = i.getFullYear();
+        var month = i.getMonth() + 1;
+        var date= i.getDate();
+        var weekday = i.getDay() ? i.getDay() : 7;
+        var fullDate = year + '-' + month + '-' +date;
+        dayData.year = year;
+        dayData.month = month;
+        dayData.date = date;
+        dayData.weekday = weekday;
+        dayData.fullDate = fullDate;
         return dayData;
     };
 
@@ -34,7 +40,7 @@
         // console.log(year, month, daysCount, beforeDaysCount, firstDayOfMonth, afterDaysCount, lastDayofMonth)
         for(let i = beforeDaysCount - 1; i > -1; i--){
             beforeDays.push(
-                {date: ''}
+                day(year, month - 1, - i )
             );
         }
         // console.log(beforeDays);
@@ -48,16 +54,19 @@
         const afterDays = [];
         for(let i = 0; i < afterDaysCount; i++){
             afterDays.push(
-                {date: ''}
+                day(year, month , i + 1)
             )
         }
         // console.log(afterDays)
-        var calData = beforeDays.concat(thisMonthDays.concat(afterDays));
+        var calDate = beforeDays.concat(thisMonthDays.concat(afterDays));
         var ret = {};
-        ret.calData = calData;
+        ret.calDate = calDate;
         ret.daysCount = daysCount;
         ret.firstDayOfMonth = firstDayOfMonth;
         ret.lastDayofMonth = lastDayofMonth;
+        ret.year = year;
+        ret.month = month;
+        console.log(ret)
         return ret;
     }
 
